@@ -3,24 +3,30 @@ var quantity = document.querySelector("#quantity");
 var currently =document.querySelector("#currentPrice");
 var btn = document.querySelector("#checkBtn");
 var outputMsgDiv = document.querySelector("#outputMsg");
+var gifs = document.querySelector(".gif")
 
 function clicked(){
-    var pp = purchased.value;
-    var qnt = quantity.value;
-    var cp = currently.value;
+    var pp = Number(purchased.value);
+    var qnt = Number(quantity.value);
+    var cp = Number(currently.value);
     if( !isNaN(pp) && !isNaN(qnt) && !isNaN(cp)){
-        pp = Number(purchased);
-        qnt = Number(quantity);
-        cp = Number(currently);
+        
         if(pp>0&& qnt>0 && cp>0){
             //profit case curret price >purchase price
             if(cp>pp){
                 var profit = ((cp-pp)*qnt).toFixed(2);
-                var percentProfit =(((cp-pp)*100)/cp).toFixed(2);
+                var percentProfit =(((cp-pp)*100)/pp).toFixed(2);
                 console.log(profit,percentProfit)
+                gifs.style.display="block"
                 outputMsgDiv.innerHTML="You gained "+percentProfit+"% your total profit is ₹"+profit+".";
+
+                if(percentProfit>50){
+                    
+                    main.classList.add("happyTheme");
+                }
+                
             } else if (cp==pp){
-                outputMsgDiv.innerHTML="Your money is at same place where you left it. No change!";
+                outputMsgDiv.innerHTML="Your money is at same place where you left it. No change! You gained 0.00%. Your total profit is ₹0.00";
             }else{
                 //loss case current price<purchase price
                 var loss = ((pp-cp)*qnt).toFixed(2);

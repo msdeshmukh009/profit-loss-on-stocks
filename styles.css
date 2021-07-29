@@ -1,0 +1,7 @@
+.gif {
+    display: none;
+}
+.happy-theme{
+    background-image:url("/2.gif");
+    background-size: 100% 100%;
+}

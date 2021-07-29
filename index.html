@@ -5,20 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profit or Loss?</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="heading"> 
-        Check Profit/Loss on your Stock
-    </div>
-    <div >
-        <input id="purchasePrice" type="text" placeholder="Enter the purchasing price of stock" required>
-        <input id="quantity" type="text" placeholder="Enter the quantity of stocks" required >
-        <input id="currentPrice" type="text" placeholder="Enter the current price of your stock" required>
-        <button id="checkBtn">Check</button>
-    </div>
-    <div id="outputMsg">
-
-    </div>
+    <main class="main">
+        <div class="heading"> 
+            Check Profit/Loss on your Stock
+        </div>
+        <div >
+            <input id="purchasePrice" type="text" placeholder="Enter the purchasing price of stock" required>
+            <input id="quantity" type="text" placeholder="Enter the quantity of stocks" required >
+            <input id="currentPrice" type="text" placeholder="Enter the current price of your stock" required>
+            <button id="checkBtn">Check</button>
+        </div>
+        <div id="outputMsg"></div>
+        <div >
+            <img class="gif" src="1.gif" alt="congrats">
+        </div>
+    </main>
+   
     <script src="app.js"></script>
 </body>
 </html>
