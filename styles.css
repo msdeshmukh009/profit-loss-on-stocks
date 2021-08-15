@@ -1,7 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+:root{
+    --back-color:#28FFBF;
+}
+body{
+    
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
 .gif {
     display: none;
+    margin:1rem auto 1rem;
+    border-radius: 60%;
+    
 }
-.happy-theme{
-    background-image:url("/2.gif");
-    background-size: 100% 100%;
+
+
+main{
+    text-align: center;
+}
+header{
+    background-color: var(--back-color);
+    padding: 1rem;
+    
+}
+form{
+    margin: 0 auto 1rem;
+}
+label{
+    font-size: x-large;
+    font-weight: bold;
+}
+input{
+    margin: 1rem auto 1rem;
+    padding: 1rem;
+    height: 20px;
+}
+button{
+    background-color: var(--back-color);
+    padding: 0.75rem;
+    border-radius: 0.3rem;
+}
+
+/* footer */
+.footer {
+    padding: 4.8rem 1rem;
+    background-color: var(--back-color);
+    border-top-right-radius: 1rem;
+    color: var(--yellow);
+    text-align: center;
+    bottom: 0;
+}
+
+.footer-heading {
+    font-weight: bold;
+    font-size: large;
+}
+.footer ul {
+    padding-inline-start: 0px;
+}
+.footer-link {
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    margin:0.5rem 1rem ;
+}
+.list-non-bullet {
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.list-item-inline {
+    display: inline;
+    margin: 0rem 0.5rem;
+}
+/* theme */
+.happyTheme{
+    
+   background-color:goldenrod ;
+} 
+.sadTheme{
+    background-color:grey ;
 }

@@ -9,20 +9,53 @@
 </head>
 <body>
     <main class="main">
-        <div class="heading"> 
-            Check Profit/Loss on your Stock
+        <header>
+            <h1 class="heading"> 
+                Stock Profit & Loss calculator 
+            </h1>
+        </header>
+        
+        <div class="forms" >
+            <form>
+                <label for="purchase">
+                    Purchase Price: 
+                </label><br>
+                <input id="purchasePrice" type="text" placeholder="Enter the purchasing " required><br>
+                <label for="qnt">
+                Quantity:
+                </label><br>
+                <input id="quantity" type="text" placeholder="Enter the quantity " required ><br>
+               <label for="current">
+                   Current Price:
+               </label><br>
+               <input id="currentPrice" type="text" placeholder="Enter the current price " required><br>
+                <button type="submit" id="checkBtn">Check</button>
+            </form>
+            <div id="outputMsg"></div>
         </div>
-        <div >
-            <input id="purchasePrice" type="text" placeholder="Enter the purchasing price of stock" required>
-            <input id="quantity" type="text" placeholder="Enter the quantity of stocks" required >
-            <input id="currentPrice" type="text" placeholder="Enter the current price of your stock" required>
-            <button id="checkBtn">Check</button>
-        </div>
-        <div id="outputMsg"></div>
-        <div >
-            <img class="gif" src="1.gif" alt="congrats">
-        </div>
+        
+      
     </main>
+    <footer class="footer">
+        
+        <ul class="list-nobullet">
+            <li class="list-item-inline">
+                <a href="https://github.com/msdeshmukh009" ><img src="img/github.png" border="0"></a>
+            </li>
+            <li class="list-item-inline">
+                <a href="https://twitter.com/wayiambot"><img src="img/twitter.png" border="0"></a>
+            </li>
+            <li class="list-item-inline">
+                <a href="mailto:deshmukhmahesh009@gmail.com"><img src="img/gmail.png" border="0"></a>
+            </li>
+            <li class="list-item-inline">
+                <a href="https://www.linkedin.com/in/mahesh-deshmukh-413830185/"><img src="img/linkedin.png" border="0"></a>
+            </li>
+            <li class="list-item-inline">
+                <a href="https://maheshdeshmukh.netlify.app/"><img src="img/briefcase.png" border="0"></a>
+            </li>  
+        </ul>
+    </footer>
    
     <script src="app.js"></script>
 </body>
