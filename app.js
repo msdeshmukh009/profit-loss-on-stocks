@@ -26,7 +26,7 @@ var gifs = document.querySelector(".gif")
                 var percentProfit =(((cp-pp)*100)/pp).toFixed(2);
                 console.log(profit,percentProfit)
                 // gifs.style.display="block"
-                outputMsgDiv.innerHTML='<div>"You gained "'+percentProfit+'"% your total profit is ₹'+profit+'"</div><img width="100%" height="200px"  src="img/undraw_Investing_re_bov7.svg" alt="image">';
+                outputMsgDiv.innerHTML='<div>You gained '+percentProfit+'% your total profit is ₹'+profit+' </div><img width="100%" height="200px"  src="img/undraw_Investing_re_bov7.svg" alt="image">';
 
                 if(percentProfit>50){
                     
@@ -40,7 +40,7 @@ var gifs = document.querySelector(".gif")
                 var loss = ((pp-cp)*qnt).toFixed(2);
                 var percentLoss = (((pp-cp)*100)/pp).toFixed(2);
                 console.log(loss,percentLoss) 
-                outputMsgDiv.innerHTML='<div>"You lost "'+percentLoss+'"% your total loss is ₹'+loss+'"</div><img width="100%" height="200px"  src="img/undraw_feeling_blue_4b7q.svg" alt="image"></img>';
+                outputMsgDiv.innerHTML='<div>You lost "'+percentLoss+'% your total loss is ₹'+loss+'</div><img width="100%" height="200px"  src="img/undraw_feeling_blue_4b7q.svg" alt="image"></img>';
                 if(percentLoss>50){
                     
                     formDiv.classList.add("sadTheme");
