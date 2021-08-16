@@ -13,6 +13,8 @@ var gifs = document.querySelector(".gif")
 
  inputForm.addEventListener("submit",(e)=>{
      e.preventDefault();
+     formDiv.classList.remove("happyTheme");
+     formDiv.classList.remove("sadTheme");
     var pp = Number(purchased.value);
     var qnt = Number(quantity.value);
     var cp = Number(currently.value);
