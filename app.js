@@ -82,19 +82,19 @@ var gifs = document.querySelector(".gif")
     if (Number(data[0].lastPrice - data[0].open) < 0) {
       priceStatus.style.color = "red";
       priceStatus.innerHTML =
-        ` <small style="display:inline;color: black;">NIFTY</small> ` +
+        ` <small style="display:inline; color: black;">NIFTY</small> ` +
         data[0].lastPrice +
-        `  ⬇ ` +
-        data[0].pChange +
-        `% <small style="display:block;color:grey;" >(update frequency=1/min)</small>`;
+        ` ⬇ ` +
+        data[0].pChange +`% 
+        <small style="display:block;color: black;">`+data[0].lastUpdateTime+`</small>`;
     } else {
       priceStatus.style.color = "green";
       priceStatus.innerHTML =
         ` <small style="display:inline; color: black;">NIFTY</small> ` +
         data[0].lastPrice +
-        `  ⬆ ` +
-        data[0].pChange +
-        `% <small style="display:block;color:grey;" >(update frequency=1/min)</small>`;
+        ` ⬆ ` +
+        data[0].pChange +`% 
+        <small style="display:block;color: black;">`+data[0].lastUpdateTime+`</small>`;
     }
   }
   
