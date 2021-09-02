@@ -1,4 +1,5 @@
 
+const priceStatus = document.querySelector("#price-status");
 var purchased = document.querySelector("#purchasePrice");
 var quantity = document.querySelector("#quantity");
 var currently =document.querySelector("#currentPrice");
@@ -28,7 +29,7 @@ var gifs = document.querySelector(".gif")
                 var percentProfit =(((cp-pp)*100)/pp).toFixed(2);
                 console.log(profit,percentProfit)
                 // gifs.style.display="block"
-                outputMsgDiv.innerHTML='<div>You gained '+percentProfit+'% your total profit is ₹'+profit+' </div><img width="100%" height="200px"  src="img/undraw_Investing_re_bov7.svg" alt="image">';
+                outputMsgDiv.innerHTML=`<div style="font-weight: bolder">You gained `+percentProfit+`% your total profit is ₹`+profit+` </div><img width="100%" height="200px"  src="img/undraw_Investing_re_bov7.svg" alt="image">`;
 
                 if(percentProfit>50){
                     
@@ -36,23 +37,64 @@ var gifs = document.querySelector(".gif")
                 }
                 
             } else if (cp==pp){
-                outputMsgDiv.innerHTML="Your money is at same place where you left it. No change! You gained 0.00%. Your total profit is ₹0.00";
+                outputMsgDiv.innerHTML=`<p style="font-weight: bolder">Your money is at same place where you left it. No change! You gained 0.00%. Your total profit is ₹0.00</P>`;
             }else{
                 //loss case current price<purchase price
                 var loss = ((pp-cp)*qnt).toFixed(2);
                 var percentLoss = (((pp-cp)*100)/pp).toFixed(2);
                 console.log(loss,percentLoss) 
-                outputMsgDiv.innerHTML='<div>You lost "'+percentLoss+'% your total loss is ₹'+loss+'</div><img width="100%" height="200px"  src="img/undraw_feeling_blue_4b7q.svg" alt="image"></img>';
+                outputMsgDiv.innerHTML=`<div style="font-weight: bolder">You lost `+percentLoss+`% your total loss is ₹`+loss+`</div><img width="100%" height="200px"  src="img/undraw_feeling_blue_4b7q.svg" alt="image"></img>`;
                 if(percentLoss>50){
                     
                     formDiv.classList.add("sadTheme");
                 }
             }
         }else{
-            outputMsgDiv.innerHTML="Please enter values greater than 0"
+            outputMsgDiv.innerHTML=`<p style="font-weight: bolder">Please enter values greater than 0</p>`
         }
     }else{
-        outputMsgDiv.innerHTML="Only numbers are allowed in above fields)";
+        outputMsgDiv.innerHTML=`<p style="font-weight: bolder">Only numbers are allowed in above fields</p>`
     }
 
  })
+
+ function getData() {
+    fetch("https://latest-stock-price.p.rapidapi.com/price?Indices=NIFTY%2050", {
+      method: "Get",
+      headers: {
+        "x-rapidapi-host": "latest-stock-price.p.rapidapi.com",
+        "x-rapidapi-key": "e264e254b0msh67dca2c347e6f3bp1e5145jsn83f5ebf02eb8"
+      }
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        displayData(json);
+      })
+  
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+  getData();
+  setInterval(getData, 60000);
+  function displayData(data) {
+    if (Number(data[0].lastPrice - data[0].open) < 0) {
+      priceStatus.style.color = "red";
+      priceStatus.innerHTML =
+        ` <small style="display:inline;color: black;">NIFTY</small> ` +
+        data[0].lastPrice +
+        `  ⬇ ` +
+        data[0].pChange +
+        `% <small style="display:block;color:grey;" >(update frequency=1/min)</small>`;
+    } else {
+      priceStatus.style.color = "green";
+      priceStatus.innerHTML =
+        ` <small style="display:inline; color: black;">NIFTY</small> ` +
+        data[0].lastPrice +
+        `  ⬆ ` +
+        data[0].pChange +
+        `% <small style="display:block;color:grey;" >(update frequency=1/min)</small>`;
+    }
+  }
+  
