@@ -79,7 +79,7 @@ var gifs = document.querySelector(".gif")
   getData();
   setInterval(getData, 60000);
   function displayData(data) {
-    if (Number(data[0].lastPrice - data[0].open) < 0) {
+    if (Number(data[0].pChange) < 0) {
       priceStatus.style.color = "red";
       priceStatus.innerHTML =
         ` <small style="display:inline; color: black;">NIFTY</small> ` +
