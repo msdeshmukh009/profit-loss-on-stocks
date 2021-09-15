@@ -5,5 +5,6 @@ This app tells user profit or loss in terms of percentage and absolute value wit
 The theme of the app changes if the profit of loss exceeds 50%.  
 This app also features the live price of NIFTY using an API.    
 https://rapidapi.com/suneetk92/api/latest-stock-price/    
-The update frequency of API is 1/min.     
+The update frequency of API is 1/min.   
+Live app: https://stockpl.netlify.app/      
 ![Website image](p&l.PNG)
