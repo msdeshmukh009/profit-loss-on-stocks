@@ -8,7 +8,7 @@ var outputMsgDiv = document.querySelector("#outputMsg");
 var inputForm = document.forms[0];
 var formDiv = document.querySelector(".forms");
 var gifs = document.querySelector(".gif")
-
+//profit loss calculation code
  inputForm.addEventListener("submit",(e)=>{
      e.preventDefault();
      formDiv.classList.remove("happyTheme");
@@ -53,7 +53,7 @@ var gifs = document.querySelector(".gif")
     }
 
  })
-
+//API related code
  function getData() {
     fetch("https://latest-stock-price.p.rapidapi.com/price?Indices=NIFTY%2050", {
       method: "Get",
